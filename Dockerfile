@@ -8,7 +8,7 @@ RUN yarn
 
 COPY . .
 
-RUN npm run build
+RUN yarn build
 
 # Use a lightweight production image
 FROM nginx:alpine
