@@ -10,23 +10,19 @@ const Signup = () => {
     const [password, setPassword] = useState('');
  
     const onSubmit = async (e) => {
-      e.preventDefault()
-     
+      e.preventDefault();
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
             console.log(user);
             navigate("/home")
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode, errorMessage);
-            // ..
         });
- 
    
     }
  
