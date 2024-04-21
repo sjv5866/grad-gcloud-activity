@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {  onAuthStateChanged, signOut } from "firebase/auth";
-import {auth, loggedIn, firebaseObserver} from './firebase';
+import {auth, db, loggedIn, firebaseObserver} from './firebase';
 import { useNavigate } from 'react-router-dom';
+import Table from './Table'
  
 const Home = () => {
     const [user, setUser] = useState("");
@@ -35,7 +36,7 @@ const Home = () => {
             <>
                 <nav>
                 <p>Welcome {user}! You are now signed-in!</p>
-    
+                <Table />
                     <div>
                         <button onClick={handleLogout}>
                             Logout

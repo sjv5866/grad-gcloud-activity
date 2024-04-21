@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
+import './App.css'
 import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
  
