@@ -1,0 +1,13 @@
+sudo yum install -y yum-utils;
+sudo yum install git -y;
+sudo yum install docker -y;
+sudo service docker start;
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash;
+source ~/.bashrc;
+nvm install --lts;
+node -e "console.log('Running Node.js ' + process.version)";
+git clone https://github.com/sjv5866/grad-gcloud-activity.git;
+cd grad-gcloud-activity/;
+npm install yarn --global --no-progress;
+yarn --version;
+sudo usermod -a -G docker ec2-user;
