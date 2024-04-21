@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {  onAuthStateChanged, signOut } from "firebase/auth";
-import {auth, db, loggedIn, firebaseObserver} from './firebase';
+// import {  onAuthStateChanged, signOut } from "firebase/auth";
+// import {auth, db, loggedIn, firebaseObserver} from './firebase';
 import { useNavigate } from 'react-router-dom';
 import Table from './Table'
  
@@ -9,26 +9,10 @@ const Home = () => {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(false);
   
-    useEffect(() => {
-        onAuthStateChanged(auth, (usr) => {
-            if (usr) {
-              setLoggedIn(true);
-              setUser(usr["email"]);
-            } else {
-              setLoggedIn(false);
-              setUser(null);
-            }
-          });
-    }, [user, loggedIn]);
+    // TODO: Implement the useEffect hook from Part Two
  
-    const handleLogout = () => {               
-        signOut(auth).then(() => {
-        // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-        // An error happened.
-        });
+    const handleLogout = () => {    
+        // TODO: Implement the handleLogout function from Part Two
     }
    
     if (loggedIn) {

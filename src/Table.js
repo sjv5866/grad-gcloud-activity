@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { db } from "./firebase";
-import { doc, collection, addDoc, query, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore"
+// import { db } from "./firebase";
+// import { doc, collection, addDoc, query, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore"
 
 const Table = () => {
     const collectionName = "punforum";
@@ -12,42 +12,18 @@ const Table = () => {
     const [updatedCustomerPun, setUpdatedCustomerPun] = useState("");
     const [dataIdToBeUpdated, setDataIdToBeUpdated] = useState("");
  
-    useEffect(() => {
-        const dbSnapshot = query(collection(db, collectionName));
-        onSnapshot(dbSnapshot, (snapshot) => {
-            setData(snapshot.docs.map((doc) => ({
-                id: doc.id,
-                body: doc.data()
-            })));
-        })
-    }, []);
+    // TODO: Implement the useEffect hook from Part Three
  
     const submit = (e) => {
-        e.preventDefault();
-        addDoc(collection(db, collectionName), {
-            name: customerName,
-            pun: customerPun,
-        });
- 
-        setCustomerName("");
-        setCustomerPun("");
+        // TODO: Implement the submit function from Part Three
     };
  
     const updateData = (e) => {
-        e.preventDefault();
-        const docRef = doc(db, collectionName, dataIdToBeUpdated);
-        updateDoc(docRef, {
-            name: updatedCustomerName,
-            pun: updatedCustomerPun,
-        });
- 
-        setUpdatedCustomerPun("");
-        setUpdatedCustomerName("");
-        setDataIdToBeUpdated("");
+        // TODO: Implement the updateData function from Part Three
     };
  
     const deleteData = (id) => {
-        deleteDoc(doc(db, collectionName, id));
+        // TODO: Implement the deleteData function from Part Three
     };
  
     return(

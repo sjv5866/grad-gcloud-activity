@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {  signInWithEmailAndPassword   } from 'firebase/auth';
-import { auth } from './firebase';
+// import {  signInWithEmailAndPassword   } from 'firebase/auth';
+// import { auth } from './firebase';
 import { NavLink, useNavigate } from 'react-router-dom'
  
 const Login = () => {
@@ -9,20 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
        
     const onLogin = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            navigate("/home")
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
-        });
-       
+        // TODO: Implement the onLogin function from Part Two       
     }
  
     return(
