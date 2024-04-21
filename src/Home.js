@@ -8,26 +8,26 @@ const Home = () => {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(false);
   
-    // useEffect(() => {
-    //     onAuthStateChanged(auth, (usr) => {
-    //         if (usr) {
-    //           setLoggedIn(true);
-    //           setUser(usr["email"]);
-    //         } else {
-    //           setLoggedIn(false);
-    //           setUser(null);
-    //         }
-    //       });
-    // }, [user, loggedIn]);
+    useEffect(() => {
+        onAuthStateChanged(auth, (usr) => {
+            if (usr) {
+              setLoggedIn(true);
+              setUser(usr["email"]);
+            } else {
+              setLoggedIn(false);
+              setUser(null);
+            }
+          });
+    }, [user, loggedIn]);
  
     const handleLogout = () => {               
-        // signOut(auth).then(() => {
-        // // Sign-out successful.
-        //     navigate("/");
-        //     console.log("Signed out successfully")
-        // }).catch((error) => {
-        // // An error happened.
-        // });
+        signOut(auth).then(() => {
+        // Sign-out successful.
+            navigate("/");
+            console.log("Signed out successfully")
+        }).catch((error) => {
+        // An error happened.
+        });
     }
    
     if (loggedIn) {
